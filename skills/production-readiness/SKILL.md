@@ -130,4 +130,4 @@ Tier: T1|T2|T3   Severity: BLOCKER|HIGH|LATER   Size: S|M|L
 ## Kit layout (Production Readiness Kit by Viaknox)
 - `checks/` — one file per domain and module: each row gives the check, the tier it is required at, the evidence that satisfies it and the common gap in AI-built products. Use these as the item list in Step 2.
 - `templates/profile.md`, `templates/scorecard.md`, `templates/gap-ticket.md` — the outputs for Step 0 and Step 3. Write results to `readiness/` in the target repo.
-- Source: https://github.com/viaknox/production-readiness-kit · Article: https://viaknox.com/blog/fast-to-build-slow-to-ship
+- Source: https://github.com/viaknox/production-readiness · Article: https://viaknox.com/blog/fast-to-build-slow-to-ship

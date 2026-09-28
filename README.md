@@ -39,7 +39,7 @@ Ask your agent to **"run production readiness"** after installing the skill for 
 
 | Tool | Install |
 |---|---|
-| **Claude Code / Cowork** | `npx skills add viaknox/production-readiness-kit` — or copy `skills/production-readiness/` into `.claude/skills/` |
+| **Claude Code / Cowork** | `npx skills add viaknox/production-readiness` — or copy `skills/production-readiness/` into `.claude/skills/` |
 | **Cursor** | Copy `skills/production-readiness/` into your repo and `adapters/cursor/production-readiness.mdc` into `.cursor/rules/` |
 | **Codex** | Copy `skills/production-readiness/` into your repo and append `adapters/codex/AGENTS.md` to your `AGENTS.md` |
 | **GitHub Copilot (VS Code)** | Copy `skills/production-readiness/` into `.github/skills/` ([docs](https://code.visualstudio.com/docs/agent-customization/agent-skills)) |
@@ -84,7 +84,7 @@ Three rules make it work:
 ## What's in the kit
 
 ```text
-production-readiness-kit/
+production-readiness/
 ├── skills/production-readiness/
 │   ├── SKILL.md              # the skill: profile → evidence → assess → deliver
 │   ├── checks/               # 23 files: core-01…core-13 + m01…m10 — 179 items, each with tier + evidence
