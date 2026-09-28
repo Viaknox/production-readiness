@@ -1,0 +1,13 @@
+---
+description: Run a production readiness assessment (13 core domains, 10 modules, 3 tiers) with evidence-based scoring.
+globs:
+alwaysApply: false
+---
+
+When the user asks to "run production readiness", "check if this is ready to ship", or "readiness assessment":
+
+1. Read `skills/production-readiness/SKILL.md` in this repository (or wherever the Production Readiness Kit is installed) and follow its workflow exactly: Step 0 profile → Step 1 gather evidence → Step 2 assess core domains + applicable modules → Step 3 deliver.
+2. Use the per-domain checklists in `skills/production-readiness/checks/` for the item list, the required tier and the evidence that satisfies each item.
+3. Score every item PASS / GAP / N/A / UNKNOWN. A PASS needs evidence (file path, config, CI run, dashboard, doc link). Never mark PASS from a README claim.
+4. Output the scorecard using `skills/production-readiness/templates/scorecard.md` and one ticket per gap using `templates/gap-ticket.md`, written to `readiness/` in the repo root.
+5. Before citing any app-store, OAuth, payment or email-sender rule, check the vendor's current documentation and record the URL and date checked.
