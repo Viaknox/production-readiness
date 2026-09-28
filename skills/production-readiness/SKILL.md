@@ -1,6 +1,7 @@
 ---
 name: "production-readiness"
 description: "Assess and harden an MVP or vibe-coded product for production launch — security, reliability, ops, integrations, APIs, app stores, AI, payments, compliance, dev-tool/OSS distribution, and adoption — with an evidence-based go/no-go and gap backlog."
+license: MIT
 ---
 
 # Production Readiness (MVP → Production)
