@@ -65,7 +65,7 @@ Blockers for T1: 3  → see readiness/backlog.md
 
 Readiness is a profile, not a checklist.
 
-- **13 core domains** (179 individual checks across domains and modules) apply to every product — 10 technical (secrets, identity, edge security, data and backups, reliability, observability, CI/CD, testing, performance and cost, operations) and 3 organizational (legal and trust, product readiness, adoption and operating model).
+- **13 core domains** (189 individual checks across domains and modules) apply to every product — 10 technical (secrets, identity, edge security, data and backups, reliability, observability, CI/CD, testing, performance and cost, operations) and 3 organizational (legal and trust, product readiness, adoption and operating model).
 - **10 modules** switch on by what you're building: integrations, public API, mobile and app stores, web and email, AI/LLM features, payments, regulated data, B2B and enterprise, marketplaces, dev tools and open source.
 - **3 tiers** set the bar: **T1** public beta · **T2** general availability · **T3** enterprise or regulated.
 
@@ -87,7 +87,7 @@ Three rules make it work:
 production-readiness/
 ├── skills/production-readiness/
 │   ├── SKILL.md              # the skill: profile → evidence → assess → deliver
-│   ├── checks/               # 23 files: core-01…core-13 + m01…m10 — 179 items, each with tier + evidence
+│   ├── checks/               # 23 files: core-01…core-13 + m01…m10 — 189 items, each with tier + evidence
 │   └── templates/            # profile.md · scorecard.md · gap-ticket.md
 ├── adapters/
 │   ├── cursor/production-readiness.mdc
@@ -107,6 +107,7 @@ production-readiness/
 | **Tool adapters** | Teams on Cursor, Codex or plain shells | Point each tool at the same skill, so every team runs one standard |
 | **Printable scorecard** | Founders, product and enterprise leaders | The 13 domains and 10 modules as a one-page self-check — no code needed |
 | **Gap ticket template** | Anyone running the backlog | Each gap as a ticket: why, done-when, evidence to close, tier, severity, size |
+| **Roll-up and sign-off** | Whoever says GO | Per-domain % PASS, blocker flags and a three-role sign-off block on every scorecard |
 
 ## Who this is for
 

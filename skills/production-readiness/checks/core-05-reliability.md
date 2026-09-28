@@ -12,9 +12,12 @@
 | 5.4 | Background work runs on a durable queue, not in-request or in-memory | T1 | Queue/worker config (e.g., a managed queue or job table) showing background work is durable across restarts | Long-running work kicked off with `setTimeout`/fire-and-forget in the request handler, lost on redeploy |
 | 5.5 | Graceful degradation when a dependency is down | T1 | Code path showing a fallback/cached response or clear user-facing error when a dependency fails | One vendor outage takes down the whole app because no fallback path exists |
 | 5.6 | SLOs defined for availability and latency | T2 | Doc or dashboard defining the SLO targets and how they're measured | No stated target, so "is it reliable enough" has no answer until users complain |
-| 5.7 | Capacity/load test at expected peak times three | T2 | Load-test report (tool, date, peak RPS tested, results) at 3x expected peak | Never load tested; first real traffic spike is the first time capacity is checked |
+| 5.7 | Load test at 3× expected peak | T2 | Load-test report (tool, date, peak RPS tested, results) at 3x expected peak | Never load tested; first real traffic spike is the first time capacity is checked |
+| 5.8 | Every external dependency listed with its failure impact, timeout and fallback | T1 | A dependency map (table or diagram) naming each dependency, what breaks when it fails, the timeout applied and the fallback behavior | Nobody can say which vendor outage takes the product down until it happens |
+| 5.9 | Capacity headroom measured against known limits, and the scaling mechanism named | T2 | Dashboard or doc showing current utilization vs. limits (DB connections, workers, rate limits, storage) with at least 30% headroom, plus how scaling happens (auto, manual, ticket) | Limits discovered the first time they are hit, usually on the busiest day |
+| 5.10 | Failure drill run at least once: primary database unavailable, cache down, disk or memory exhausted | T2 | Dated drill notes showing what was simulated, what the user saw, how long recovery took and what was fixed afterwards | Resilience assumed from architecture diagrams, never observed |
 
 **Right-sizing notes.**
-- T1 covers the request-path fundamentals (timeouts, safe retries, idempotency, durable background work, graceful degradation) — these prevent cascading failures even at low scale.
-- SLOs and load testing (5.6, 5.7) are T2 concerns tied to SLA expectations; don't require a formal load-test report for a 50-user beta.
+- T1 covers the request-path fundamentals (timeouts, safe retries, idempotency, durable background work, graceful degradation) and the dependency map (5.8) — these prevent cascading failures even at low scale.
+- SLOs, load testing, headroom and failure drills (5.6–5.10) are T2 concerns tied to SLA expectations; don't require a formal load-test report for a 50-user beta.
 - Multi-region failover and active-active reliability aren't in this checklist at all — that's beyond T3 scope for most products and should be called out separately if a specific SLA demands it.

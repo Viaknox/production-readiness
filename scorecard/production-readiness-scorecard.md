@@ -11,7 +11,7 @@ Score every item **PASS · GAP · N/A · UNKNOWN**. A PASS needs evidence you ca
 ---
 
 ## Core — every product
- 
+
 ### 01 · Secrets & config
 
 | # | Check | Tier | Score | Evidence |
@@ -71,7 +71,10 @@ Score every item **PASS · GAP · N/A · UNKNOWN**. A PASS needs evidence you ca
 | 5.4 | Background work runs on a durable queue, not in-request or in-memory | T1 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
 | 5.5 | Graceful degradation when a dependency is down | T1 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
 | 5.6 | SLOs defined for availability and latency | T2 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
-| 5.7 | Capacity/load test at expected peak times three | T2 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
+| 5.7 | Load test at 3× expected peak | T2 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
+| 5.8 | Every external dependency listed with its failure impact, timeout and fallback | T1 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
+| 5.9 | Capacity headroom measured against known limits, and the scaling mechanism named | T2 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
+| 5.10 | Failure drill run at least once: primary database unavailable, cache down, disk or memory exhausted | T2 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
 
 ### 06 · Observability
 
@@ -83,6 +86,10 @@ Score every item **PASS · GAP · N/A · UNKNOWN**. A PASS needs evidence you ca
 | 6.4 | Uptime checks from outside the system | T1 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
 | 6.5 | Symptom-based alerts routed to a human who will actually see them | T1 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
 | 6.6 | Dashboards ready for launch day | T1 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
+| 6.7 | Alert thresholds written down with numbers, not adjectives | T2 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
+| 6.8 | Certificate and domain expiry monitored, with an alert at least 14 days ahead | T1 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
+| 6.9 | Traces follow a request across services, queues and third-party calls | T2 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
+| 6.10 | Logs shipped to a central store with a stated retention period | T2 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
 
 ### 07 · CI/CD & release
 
@@ -126,6 +133,9 @@ Score every item **PASS · GAP · N/A · UNKNOWN**. A PASS needs evidence you ca
 | 10.4 | Status page live | T2 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
 | 10.5 | Support channel and SLA defined | T2 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
 | 10.6 | Admin tooling exists for common support tasks | T2 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
+| 10.7 | Everyone on call has production access, the tooling and an escalation path that has been tested | T2 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
+| 10.8 | New responders shadow at least one incident or drill before going on call alone | T2 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
+| 10.9 | Architecture and data-flow diagram current and kept in the repo | T1 | ☐ PASS ☐ GAP ☐ N/A ☐ UNK | |
 
 ### 11 · Legal & trust
 
@@ -312,6 +322,27 @@ Score every item **PASS · GAP · N/A · UNKNOWN**. A PASS needs evidence you ca
 
 ---
 
+## Roll-up
+
+| Domain | Items scored | PASS | GAP | UNKNOWN | % PASS | Blocker? |
+|---|---|---|---|---|---|---|
+| 01 Secrets & config | | | | | | ☐ |
+| 02 Identity & access | | | | | | ☐ |
+| 03 Edge & app security | | | | | | ☐ |
+| 04 Data & backups | | | | | | ☐ |
+| 05 Reliability | | | | | | ☐ |
+| 06 Observability | | | | | | ☐ |
+| 07 CI/CD & release | | | | | | ☐ |
+| 08 Testing | | | | | | ☐ |
+| 09 Performance & cost | | | | | | ☐ |
+| 10 Operations & support | | | | | | ☐ |
+| 11 Legal & trust | | | | | | ☐ |
+| 12 Product readiness | | | | | | ☐ |
+| 13 Adoption & operating model | | | | | | ☐ |
+| Modules on | | | | | | ☐ |
+
+% PASS is a progress number, not the verdict. One blocker at your target tier is a NO-GO however high the percentage.
+
 ## Verdict
 
 **GO ☐  GO-WITH-CONDITIONS ☐  NO-GO ☐**   Blockers: ____  High: ____  Unknown: ____
@@ -324,5 +355,15 @@ Score every item **PASS · GAP · N/A · UNKNOWN**. A PASS needs evidence you ca
 5. 
 
 **Next action (one):** ______________________________________________
+
+## Sign-off
+
+| Role | Name | Date | Signature |
+|---|---|---|---|
+| Engineering owner | | | |
+| Operations / on-call owner | | | |
+| Product or business owner | | | |
+
+Sign-off means: the evidence above was inspected, every blocker at the target tier is closed or has a dated exception, and the named owner (13.7) accepts the product after launch.
 
 *Production Readiness Kit by Viaknox · viaknox.com · CC BY 4.0. Full item guidance in `skills/production-readiness/checks/`.*
